@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Happy 5th Monthsary, Jay!</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: #333;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+            background-color: black;
+            /* Set background to black */
+        }
+
+        /* Background Video */
+        .bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 60%;
+            /* Adjust width percentage for smaller size */
+            height: auto;
+            /* Maintain aspect ratio */
+            z-index: -1;
+            transform: translate(-50%, -50%);
+            opacity: 0.7;
+            /* Adjust transparency */
+        }
+
+        .message-btn {
+            background-color: #000000fb;
+            color: rgb(255, 196, 0);
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 30px;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+            z-index: 1;
+            position: relative;
+            margin-bottom: 50px;
+            /* Space from bottom */
+        }
+
+        .message-btn:hover {
+            background-color: #241100;
+            color: rgb(241, 241, 191);
+        }
+
+        .modal-content {
+            padding: 40px;
+            text-align: center;
+            font-size: 1rem;
+            border-radius: 15px;
+            background-color: transparent;
+            color: antiquewhite;
+            border-color: transparent;
+        }
+
+        .modal-title {
+            font-size: 2rem;
+            color: #ffbb00;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .modal-text {
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .close-btn {
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 16px;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background-color: #241100;
+            color: antiquewhite;
+        }
+
+        /* Keyframes for text animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Background Video with playsinline for iPhone -->
+    <video autoplay loop muted playsinline class="bg-video">
+        <source src="./assets/files/love.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+
+    <!-- Background Music (Initially Muted) -->
+    <audio autoplay loop muted>
+        <source src="./assets/files/birds_of_the_feather.mp3" type="audio/mpeg">
+        Your browser does not support HTML5 audio.
+    </audio>
+
+    <!-- Message Button -->
+    <div class="d-flex justify-content-center align-items-end" style="height: 100vh; z-index: 1; padding-bottom: 50px;">
+        <button class="message-btn" data-bs-toggle="modal" data-bs-target="#loveLetterModal">
+            Click to Read the Letter!
+        </button>
+    </div>
+
+    <!-- Modal (Popup) for Love Letter -->
+    <div class="modal fade" id="loveLetterModal" tabindex="-1" aria-labelledby="loveLetterModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <h2 class="modal-title" id="loveLetterModalLabel">To My One and Only✨</h2>
+                <p class="modal-text">
+                    Happy 5th month, my sweetest babe! These past five months have been an incredible journey filled
+                    with immeasurable love, laughter, and joy. Every moment spent with you feels like a precious gift. I
+                    am grateful for the unwavering love and care you shower upon me. I am so proud of you for everything
+                    you've done and for being the amazing person you are. You are not only cute and beautiful but also
+                    incredibly special to me.
+                </p>
+                <p class="modal-text">
+                    Here's to the countless more beautiful moments that await us, koh kaly ly. My love for you is
+                    unwavering and will continue to grow with each passing day. ❤️
+                </p>
+                <p class="modal-text">
+                    "Love is patient, love is kind. It does not envy, it does not boast, it is not proud." — 1
+                    Corinthians 13:4
+                </p>
+                <button type="button" class="close-btn" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript to Play Audio After Button Click -->
+    <script>
+        document.querySelector('.message-btn').addEventListener('click', function () {
+            const audio = document.querySelector('audio');
+            audio.muted = false; // Unmute the audio
+            audio.play().catch(function (error) {
+                console.log("Audio playback failed:", error); // Catch any errors
+            });
+        });
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
